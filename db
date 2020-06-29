@@ -1,0 +1,35 @@
+# quickdbd file
+
+User
+-
+id int PK
+firstName VARCHAR
+middleName VARCHAR
+lastName VARCHAR
+role int FK - Role.id
+login VARCHAR
+password VARCHAR
+
+Role
+-
+id int PK
+role VARCHAR
+
+Test
+-
+id int PK
+name VARCHAR
+owner int FK - User.id
+
+TestQuestions
+-
+id int PK
+testID int FK - Test.id
+quastionID int FK - Question.id
+
+Question
+-
+id int PK
+number int
+question VARCHAR
+answer VARCHAR
