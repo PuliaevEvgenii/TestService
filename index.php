@@ -19,5 +19,13 @@ if ($_SESSION['message']) {
 unset($_SESSION['message']);
 ?>
 
+<?php
+if ($_SESSION['user']) {
+    if ($_SESSION['user']['role'] == 0) {
+        header('Location: pages/admin.php');
+    }
+}
+?>
+
 </body>
 </html>

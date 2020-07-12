@@ -11,22 +11,22 @@ session_start();
 <body>
 <form method="post" action="../core/handle_registration.php">
     <label>
-        <input type="text" name="firstName">
+        <input type="text" name="lastName" placeholder="Фамилия">
     </label>
     <label>
-        <input type="text" name="middleName">
+        <input type="text" name="firstName" placeholder="Имя">
     </label>
     <label>
-        <input type="text" name="lastName">
+        <input type="text" name="middleName" placeholder="Отчество">
     </label>
     <label>
-        <input type="text" name="login">
+        <input type="text" name="login" placeholder="Логин">
     </label>
     <label>
-        <input type="password" name="password">
+        <input type="password" name="password" placeholder="Пароль">
     </label>
     <label>
-        <input type="password" name="confirmPassword">
+        <input type="password" name="confirmPassword" placeholder="Подтвердите пароль">
     </label>
     <button type="submit" name="loginButton">Зарегестрироваться</button>
 </form>
