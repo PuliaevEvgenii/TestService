@@ -21,12 +21,7 @@ session_start();
 
 <p class="auth-redirect">Нет аккаунта? - <a href="registration.php">Зарегестрируйтесь</a>!</p>
 
-<?php
-if ($_SESSION['message']) {
-    echo '<div class="message">' . $_SESSION['message'] . '</div>';
-}
-unset($_SESSION['message']);
-?>
+<?php include "../html_elements/message.php" ?>
 
 </body>
 </html>

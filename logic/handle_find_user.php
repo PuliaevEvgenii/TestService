@@ -6,7 +6,9 @@ $login = $_GET['login'];
 
 $dbUser = mysqli_query(
     $connection,
-    "SELECT u.userID, u.firstName, u.lastName, u.middleName, u.login, r.roleName FROM `user` u INNER JOIN `roles` r ON u.role = r.roleID WHERE `login` = '$login'"
+    "SELECT u.userID, u.firstName, u.lastName, u.middleName, u.login, r.roleName 
+    FROM `users` u INNER JOIN `roles` r ON u.role = r.roleID 
+    WHERE `login` = '$login'"
 );
 
 $foundUser = mysqli_fetch_assoc($dbUser);

@@ -12,14 +12,21 @@ $role = $_POST['role'];
 
 mysqli_query(
     $connection,
-    "UPDATE `user` 
-    SET `userID`=NULL, `firstName`='$firstName', `middleName`='$middleName', `lastName`='$lastName', `login`='$login', `password`='$password', `role`='$role' 
+    "UPDATE `users` 
+    SET 
+        `userID`=NULL, 
+        `firstName`='$firstName', 
+        `middleName`='$middleName', 
+        `lastName`='$lastName', 
+        `login`='$login', 
+        `password`='$password', 
+        `role`='$role' 
     WHERE `login`='$login'"
 );
 
 $user = mysqli_fetch_assoc(mysqli_query(
     $connection,
-    "SELECT * FROM `user` WHERE `login` = '$login' AND `password` = '$password'"
+    "SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'"
 ));
 
 if ($user) {

@@ -21,15 +21,9 @@ id int PK
 name VARCHAR
 owner int FK - User.id
 
-TestQuestions
--
-id int PK
-testID int FK - Test.id
-quastionID int FK - Question.id
-
 Question
 -
 id int PK
-number int
-question VARCHAR
+name VARCHAR
 answer VARCHAR
+test int FK - Test.id

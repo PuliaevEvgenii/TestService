@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../logic/handle_all_users_list.php";
+include "../logic/handle_get_all_users.php";
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +10,8 @@ include "../logic/handle_all_users_list.php";
     <title>Панель администрирования</title>
 </head>
 <body>
+
+<?php include "../html_elements/header.php" ?>
 
 <div class="all-users">
     <table>

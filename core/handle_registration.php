@@ -11,28 +11,28 @@ $lastName = $_POST['lastName'];
 
 $checkLogin = mysqli_num_rows(mysqli_query(
     $connection,
-    "SELECT * FROM `user` WHERE `login` = '$login'"
+    "SELECT * FROM `users` WHERE `login` = '$login'"
 ));
 
 if ($checkLogin != 0) {
-    $_SESSION['message'] = 'Этот логин уже занят';
+    $_SESSION['message'] = 'Этот логин уже занят.';
 } else {
     if ($password === $confirmPassword) {
         $password = md5($password);
 
         mysqli_query(
             $connection,
-            "INSERT INTO `user` (`userID`, `firstName`, `middleName`, `lastName`, `login`, `password`, `role`) 
+            "INSERT INTO `users` (`userID`, `firstName`, `middleName`, `lastName`, `login`, `password`, `role`) 
             VALUES (NULL, '$firstName', '$middleName', '$lastName', '$login', '$password', '1')"
         );
 
         $user = mysqli_fetch_assoc(mysqli_query(
             $connection,
-            "SELECT * FROM `user` WHERE `login` = '$login' AND `password` = '$password'"
+            "SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'"
         ));
 
         if ($user) {
-            $_SESSION['message'] = 'Регистрация прошла успешно';
+            $_SESSION['message'] = 'Регистрация прошла успешно.';
             $_SESSION['user'] = [
                 'id' => $user['userID'],
                 'firstName' => $user['firstName'],
@@ -48,7 +48,7 @@ if ($checkLogin != 0) {
         }
 
     } else {
-        $_SESSION['message'] = 'Пароли не совпадают';
+        $_SESSION['message'] = 'Пароли не совпадают.';
         header('Location: ../pages/registration.php');
     }
 }
