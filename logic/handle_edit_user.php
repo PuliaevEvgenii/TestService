@@ -2,6 +2,7 @@
 session_start();
 require_once '../includes/db.php';
 
+$id = $_SESSION['foundUser']['id'];
 $login = $_SESSION['foundUser']['login'];
 $password = md5($_POST['password']);
 $firstName = $_POST['firstName'];
@@ -14,7 +15,7 @@ mysqli_query(
     $connection,
     "UPDATE `users` 
     SET 
-        `userID`=NULL, 
+        `userID`='$id', 
         `firstName`='$firstName', 
         `middleName`='$middleName', 
         `lastName`='$lastName', 
@@ -26,7 +27,15 @@ mysqli_query(
 
 $user = mysqli_fetch_assoc(mysqli_query(
     $connection,
-    "SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'"
+    "SELECT * FROM `users` 
+    WHERE 
+        `userID`='$id' AND 
+        `login` = '$login' AND 
+        `password` = '$password' AND 
+        `firstName`='$firstName' AND 
+        `middleName`='$middleName' AND 
+        `lastName`='$lastName' AND 
+        `role`='$role'"
 ));
 
 if ($user) {

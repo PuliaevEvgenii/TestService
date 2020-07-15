@@ -13,6 +13,8 @@ include "../logic/handle_get_all_users.php";
 
 <?php include "../html_elements/header.php" ?>
 
+<?php include "../html_elements/message.php" ?>
+
 <div class="all-users">
     <table>
         <caption>Зарегестрированные пользователи</caption>
@@ -53,7 +55,7 @@ include "../logic/handle_get_all_users.php";
             <option value="2">Преподаватель</option>
         </select>
     </label>
-    <button type="submit" name="add-button">Добавить</button>
+    <button type="submit" name="add-button">Применить изменения</button>
 </form>
 
 </body>

@@ -18,7 +18,6 @@ if ($_SESSION['user']) {
     echo
         '<div>' .
             $_SESSION['user']['login'] .
-            $_SESSION['user']['id'] .
             '<a href="core/handle_logout.php">Выйти</a>
         </div>';
 } else {
