@@ -9,6 +9,7 @@ include "../logic/handle_get_tests_to_assessment.php";
 <head>
     <meta charset="UTF-8">
     <title>Личный кабинет преподователя</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
 
@@ -16,7 +17,7 @@ include "../logic/handle_get_tests_to_assessment.php";
 
 <?php include "../html_elements/message.php" ?>
 
-<div class="tutors-tests">
+<div class="table-wrapper">
     <table>
         <caption>Ваши тесты</caption>
         <tr>
@@ -41,15 +42,19 @@ include "../logic/handle_get_tests_to_assessment.php";
              ';
         }
         ?>
+        <tr>
+            <td></td>
+            <td><label><input type="text" name="name" placeholder="Название теста" form="create-test"></label></td>
+            <td>
+                <form method="post" action="../logic/handle_create_test.php" id="create-test">
+                    <button type="submit" name="create-test">Создать тест</button>
+                </form>
+            </td>
+        </tr>
     </table>
 </div>
 
-<form method="post" action="../logic/handle_create_test.php">
-    <label><input type="text" name="name" placeholder="Название теста"></label>
-    <button type="submit" name="create-test">Создать тест</button>
-</form>
-
-<div class="solved-tests">
+<div class="table-wrapper">
     <table>
         <caption>Тесты для оценивания</caption>
         <tr>

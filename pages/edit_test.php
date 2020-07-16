@@ -7,15 +7,17 @@ include "../logic/handle_get_test_questions.php";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Новый тест</title>
+    <title>Тест <?= $_SESSION['editTest']['name'] ?></title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
 
+<?php include "../html_elements/header.php" ?>
+
 <?php include "../html_elements/message.php" ?>
 
-<b><?= $_SESSION['editTest']['name'] ?></b>
-
-<div class="test-questions">
+<div class="table-wrapper">
+    <p><b><?= $_SESSION['editTest']['name'] ?></b></p>
     <table>
         <caption>Вопросы теста</caption>
         <tr>
@@ -41,18 +43,24 @@ include "../logic/handle_get_test_questions.php";
              ';
         }
         ?>
+        <tr>
+            <td></td>
+            <td><label><input type="text" name="name" placeholder="Вопрос" form="create-question"></label></td>
+            <td><label><input type="text" name="answers" placeholder="Варианты ответа" form="create-question"></label></td>
+            <td>
+                <form method="post" action="../logic/handle_create_question.php" id="create-question">
+                    <button type="submit" name="create-question">Добавить вопрос</button>
+                </form>
+            </td>
+        </tr>
     </table>
 </div>
 
-<form method="post" action="../logic/handle_create_question.php">
-    <label><input type="text" name="name" placeholder="Вопрос"></label>
-    <label><input type="text" name="answers" placeholder="Варианты ответа"></label>
-    <button type="submit" name="create-question">Добавить вопрос</button>
-</form>
-
-<form method="post" action="../logic/handle_end_test_edition.php">
-    <button type="submit" name="end-test-edition">Закончить редактирование</button>
-</form>
+<div class="confirm-wrapper">
+    <form method="post" action="../logic/handle_end_test_edition.php">
+        <button type="submit" name="end-test-edition">Закончить редактирование</button>
+    </form>
+</div>
 
 </body>
 </html>

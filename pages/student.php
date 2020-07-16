@@ -8,6 +8,7 @@ include "../logic/handle_get_students_tests.php"
 <head>
     <meta charset="UTF-8">
     <title>Личный кабинет студента</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
 
@@ -15,12 +16,14 @@ include "../logic/handle_get_students_tests.php"
 
 <?php include "../html_elements/message.php" ?>
 
-<form method="post" action="../logic/handle_find_test.php">
-    <label><input type="text" name="testID" placeholder="ID теста"></label>
-    <button type="submit" name="find-test">Найти тест</button>
-</form>
+<div class="confirm-wrapper">
+    <form method="post" action="../logic/handle_find_test.php">
+        <label><input type="text" name="testID" placeholder="ID теста"></label>
+        <button type="submit" name="find-test">Найти тест</button>
+    </form>
+</div>
 
-<div class="students-tests">
+<div class="table-wrapper">
     <table>
         <caption>Пройденные тесты</caption>
         <tr>
