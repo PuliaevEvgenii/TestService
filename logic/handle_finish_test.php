@@ -31,5 +31,16 @@ mysqli_query(
     VALUES (NULL, '$userID', '$testID', '$trueAnswersNum', '$falseAnswersNum', NULL)"
 );
 
-unset($_SESSION['testToSolve']);
-header('Location: ../pages/student.php');
+$dbFinishedTest = mysqli_query(
+    $connection,
+    "SELECT * FROM `solved_tests` WHERE `user` = '$userID' AND `test` = '$testID'"
+);
+
+if ($dbFinishedTest) {
+    $_SESSION['message'] = "Тест успешно сохранен.";
+    unset($_SESSION['testToSolve']);
+    header('Location: ../pages/student.php');
+} else {
+    $_SESSION['message'] = "Тест не сохранен.";
+    header('Location: ../pages/solve_test.php');
+}

@@ -40,7 +40,6 @@ if ($dbAnswer) {
         header('Location: ../pages/solve_test.php');
     }
 } else {
-    $_SESSION['message'] = "Ответ на вопрос не сохранился, повторите попытку. 
-    userID - $userID, testID - $testID, questID - $questionID, questNum - $questNum.";
+    $_SESSION['message'] = "Ответ на вопрос не сохранился, повторите попытку.";
     header('Location: ../pages/solve_test.php');
 }

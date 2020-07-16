@@ -39,7 +39,7 @@ $user = mysqli_fetch_assoc(mysqli_query(
 ));
 
 if ($user) {
-    $_SESSION['message'] = 'Редактирование прошло успешно';
+    $_SESSION['message'] = 'Редактирование прошло успешно.';
 } else {
     $_SESSION['message'] = 'Что то пошло не так...';
 }

@@ -40,4 +40,3 @@ if ($testName) {
     $_SESSION['message'] = "Тест с ID $testID не найден.";
     header('Location: ../pages/student.php');
 }
-
