@@ -8,6 +8,7 @@ $confirmPassword = $_POST['confirmPassword'];
 $firstName = $_POST['firstName'];
 $middleName = $_POST['middleName'];
 $lastName = $_POST['lastName'];
+$role = $_POST['role'];
 
 $checkLogin = mysqli_num_rows(mysqli_query(
     $connection,
@@ -23,7 +24,7 @@ if ($checkLogin != 0) {
         mysqli_query(
             $connection,
             "INSERT INTO `users` (`userID`, `firstName`, `middleName`, `lastName`, `login`, `password`, `role`) 
-            VALUES (NULL, '$firstName', '$middleName', '$lastName', '$login', '$password', '1')"
+            VALUES (NULL, '$firstName', '$middleName', '$lastName', '$login', '$password', '$role')"
         );
 
         $user = mysqli_fetch_assoc(mysqli_query(
