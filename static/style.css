@@ -84,6 +84,7 @@ button {
     border: none;
     border-radius: 5px;
     color: white;
+    cursor: pointer;
 }
 
 table {
@@ -153,4 +154,13 @@ caption {
 .menu-href {
     text-decoration: none;
     color: white;
+}
+
+.button {
+    background-color: mediumseagreen;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 8px;
+    cursor: pointer;
+    width: 49px;
 }

@@ -80,6 +80,11 @@ include "../logic/handle_get_tests_to_assessment.php";
                         ) . '
                     </td>
                     <td>
+                        <form method="post" action="../logic/handle_view_solved_test.php">
+                            <label><input type="text" name="user" value="' . $solvedTests[$i]['userID'] . '" hidden></label>
+                            <label><input type="text" name="test" value="' . $solvedTests[$i]['testID'] . '" hidden></label>
+                            <button type="submit" name="view-solved-test">Посмотреть работу</button>
+                        </form>
                         <form method="post" action="../logic/handle_rate_solved_test.php">
                             <label><input type="text" name="user" value="' . $solvedTests[$i]['userID'] . '" hidden></label>
                             <label><input type="text" name="test" value="' . $solvedTests[$i]['testID'] . '" hidden></label>
