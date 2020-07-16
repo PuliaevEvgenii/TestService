@@ -27,8 +27,8 @@ $falseAnswersNum = $numOfRows - $trueAnswersNum;
 
 mysqli_query(
     $connection,
-    "INSERT INTO `solved_tests` (`solved_test_id`, `user`, `test`, `true_answers`, `false_answers`) 
-    VALUES (NULL, '$userID', '$testID', '$trueAnswersNum', '$falseAnswersNum')"
+    "INSERT INTO `solved_tests` (`solved_test_id`, `user`, `test`, `true_answers`, `false_answers`, `mark`) 
+    VALUES (NULL, '$userID', '$testID', '$trueAnswersNum', '$falseAnswersNum', NULL)"
 );
 
 unset($_SESSION['testToSolve']);
