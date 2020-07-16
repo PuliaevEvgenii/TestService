@@ -58,7 +58,7 @@ include "../logic/handle_get_tests_to_assessment.php";
             <th>ID теста</th>
             <th>Название теста</th>
             <th>Процент верности</th>
-            <th>Оценивание</th>
+            <th>Действия</th>
         </tr>
         <?php
         for ($i = 0; $i < $numOfSolvedTests; ++$i) {
@@ -79,7 +79,12 @@ include "../logic/handle_get_tests_to_assessment.php";
                             <label><input type="text" name="user" value="' . $solvedTests[$i]['userID'] . '" hidden></label>
                             <label><input type="text" name="test" value="' . $solvedTests[$i]['testID'] . '" hidden></label>
                             <label><input type="text" name="mark" value="' . $solvedTests[$i]['mark'] . '" placeholder="Оценка"></label>
-                            <button type="submit" name="mark-test">Сохранить</button>
+                            <button type="submit" name="mark-test">Оценить</button>
+                        </form>
+                        <form method="post" action="../logic/handle_one_more_time.php">
+                            <label><input type="text" name="user" value="' . $solvedTests[$i]['userID'] . '" hidden></label>
+                            <label><input type="text" name="test" value="' . $solvedTests[$i]['testID'] . '" hidden></label>
+                            <button type="submit" name="one-more-time">Дать еще попытку</button>
                         </form>
                     </td>
                 </tr>
