@@ -22,6 +22,7 @@ include "../logic/handle_get_test_questions.php";
             <th>id</th>
             <th>Вопрос</th>
             <th>Варианты ответов</th>
+            <th>Действия</th>
         </tr>
         <?php
         for ($i = 0; $i < $numOfRows; ++$i) {
@@ -30,6 +31,12 @@ include "../logic/handle_get_test_questions.php";
                     <td>' . $testQuestions[$i]['questionID'] . '</td>
                     <td>' . $testQuestions[$i]['name'] . '</td>
                     <td>' . $testQuestions[$i]['answers'] . '</td>
+                    <td>
+                        <form method="post" action="../logic/handle_delete_question.php">
+                            <label><input type="text" name="questID" value="' . $testQuestions[$i]['questionID'] . '" hidden></label>
+                            <button type="submit" name="delete-question">Удалить</button>
+                        </form>
+                    </td>
                 </tr>
              ';
         }

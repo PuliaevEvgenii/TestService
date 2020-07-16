@@ -25,7 +25,7 @@ session_start();
     <button type="submit" name="loginButton">Зарегестрироваться</button>
 </form>
 
-<p class="auth-redirect">Уже есть аккаунт? - <a href="registration.php">Войдите</a>!</p>
+<p class="auth-redirect">Уже есть аккаунт? - <a href="login.php">Войдите</a>!</p>
 
 <?php include "../html_elements/message.php" ?>
 

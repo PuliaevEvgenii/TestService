@@ -22,6 +22,7 @@ include "../logic/handle_get_tests_to_assessment.php";
         <tr>
             <th>id</th>
             <th>Название</th>
+            <th>Действия</th>
         </tr>
         <?php
         for ($i = 0; $i < $numOfRows; ++$i) {
@@ -29,6 +30,13 @@ include "../logic/handle_get_tests_to_assessment.php";
                 <tr>
                     <td>' . $allTests[$i]['testID'] . '</td>
                     <td>' . $allTests[$i]['name'] . '</td>
+                    <td>
+                        <form method="post" action="../logic/handle_edit_test.php">
+                            <label><input type="text" name="testID" value="' . $allTests[$i]['testID'] . '" hidden></label>
+                            <label><input type="text" name="name" value="' . $allTests[$i]['name'] . '" hidden></label>
+                            <button type="submit" name="edit-test">Редактировать</button>
+                        </form>
+                    </td>
                 </tr>
              ';
         }
