@@ -6,7 +6,7 @@ $userID = $_SESSION['user']['id'];
 
 $dbTests = mysqli_query(
     $connection,
-    "SELECT st.test, t.name, st.true_answers, st.false_answers 
+    "SELECT st.test, t.name, st.true_answers, st.false_answers, st.mark 
     FROM `solved_tests` st INNER JOIN `tests` t ON st.test=t.testID 
     WHERE `user`='$userID'"
 );

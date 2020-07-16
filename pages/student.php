@@ -27,6 +27,7 @@ include "../logic/handle_get_students_tests.php"
             <th>id</th>
             <th>Название</th>
             <th>Процент верности</th>
+            <th>Оценка</th>
         </tr>
         <?php
         for ($i = 0; $i < $numOfRows; ++$i) {
@@ -40,6 +41,7 @@ include "../logic/handle_get_students_tests.php"
                             2
                         ) . '
                     </td>
+                    <td>' . $tests[$i]['mark'] . '</td>
                 </tr>
              ';
         }
