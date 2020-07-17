@@ -138,17 +138,22 @@ caption {
 }
 
 .menu {
-    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 90%;
     margin: 15px auto auto;
     padding: 8px;
 }
 
 .menu-item {
+    margin:15px;
     padding: 8px;
     cursor: pointer;
     background-color: mediumseagreen;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    max-width: 300px;
 }
 
 .menu-href {

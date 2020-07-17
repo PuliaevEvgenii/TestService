@@ -1,29 +1,47 @@
 # quickdbd file
 
-User
+users
 -
-id int PK
+userID int PK
 firstName VARCHAR
 middleName VARCHAR
 lastName VARCHAR
-role int FK - Role.id
+role int FK - role.roleid
 login VARCHAR
 password VARCHAR
 
-Role
+role
 -
-id int PK
+roleID int PK
 role VARCHAR
 
-Test
+tests
 -
-id int PK
+testID int PK
 name VARCHAR
-owner int FK - User.id
+owner int FK - users.userid
 
-Question
+questions
 -
-id int PK
+questionID int PK
 name VARCHAR
+answers VARCHAR
+test int FK - tests.testid
+
+solved_tests
+-
+solved_test_id int PK
+user int FK - users.userid
+test int FK - tests.testid
+true_answers int
+false_answers int
+mark null int
+
+answers
+-
+answerID int PK
+user int FK - users.userid
+test int FK - tests.testid
+question int FK - questions.questionid
 answer VARCHAR
-test int FK - Test.id
+mark bool
