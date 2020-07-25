@@ -7,7 +7,7 @@ include "../logic/handle_get_all_users.php";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Панель администрирования</title>
+    <title>Просмотр ответов</title>
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>

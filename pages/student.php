@@ -17,9 +17,13 @@ include "../logic/handle_get_students_tests.php"
 <?php include "../html_elements/message.php" ?>
 
 <div class="confirm-wrapper">
+    <p>Ведите id теста, котрорый вы хотите пройти
+        (уже пройденные тесты недоступны для повторного прохождения,
+        результат их выполнения вы можете посмотреть в таблице ниже)
+    </p>
     <form method="post" action="../logic/handle_find_test.php">
         <label><input type="text" name="testID" placeholder="ID теста"></label>
-        <button type="submit" name="find-test">Найти тест</button>
+        <button type="submit" name="find-test">Пройти тест</button>
     </form>
 </div>
 
